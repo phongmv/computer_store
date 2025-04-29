@@ -5,7 +5,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Shipping Policy - Shoe Store</title>
+    <title>Shipping Policy - Clothing Store</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -24,7 +24,7 @@
         <section>
             <h2 class="text-xl font-semibold text-blue-500 mb-2">Order Processing Time</h2>
             <p class="text-gray-700 leading-relaxed">
-                Orders will be processed within <strong>1-2 business days</strong> after payment is received.
+                Orders will be processed within <strong>1-2 business days</strong> after payment is received. Please note that processing times may be slightly longer during sales events or public holidays.
             </p>
         </section>
 

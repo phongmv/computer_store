@@ -32,15 +32,6 @@
     </nav>
 
     <div class="flex flex-col lg:flex-row gap-10">
-      <!-- Image -->
-      <div class="lg:w-1/2">
-        <div class="bg-white rounded-xl shadow overflow-hidden">
-          <img src="${not empty product.image ? 'data:image/jpeg;base64,'.concat(product.getImageBase64()) : 'https://via.placeholder.com/800x600?text=No+Image'}"
-               alt="${product.name}"
-               class="w-full object-cover max-h-[500px]"
-               onerror="this.src='https://via.placeholder.com/800x600?text=Image+Error'">
-        </div>
-      </div>
 
       <!-- Details -->
       <div class="lg:w-1/2">
@@ -81,14 +72,15 @@
               <i class="fas fa-cart-plus mr-2"></i> Add to Cart
             </button>
           </form>
-
-          <!-- Back -->
-          <div>
-            <a href="${pageContext.request.contextPath}/home"
-               class="text-blue-600 hover:text-blue-800 text-sm inline-flex items-center mt-2">
-              <i class="fas fa-arrow-left mr-1"></i> Back to Products
-            </a>
-          </div>
+        </div>
+      </div>
+      <!-- Image -->
+      <div class="lg:w-1/2">
+        <div class="bg-white rounded-xl shadow overflow-hidden">
+          <img src="${not empty product.image ? 'data:image/jpeg;base64,'.concat(product.getImageBase64()) : 'https://via.placeholder.com/800x600?text=No+Image'}"
+               alt="${product.name}"
+               class="w-full object-cover max-h-[500px]"
+               onerror="this.src='https://via.placeholder.com/800x600?text=Image+Error'">
         </div>
       </div>
     </div>

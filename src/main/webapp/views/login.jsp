@@ -6,7 +6,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Login - Shoe Store</title>
+    <title>Login - Clothing Store</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
@@ -16,7 +16,7 @@
 <header class="bg-white shadow-md fixed w-full top-0 z-50">
     <div class="container mx-auto px-4 py-4 flex justify-between items-center">
         <a href="${pageContext.request.contextPath}/home" class="text-2xl font-bold text-blue-600 hover:text-blue-800">
-            <i class="fas fa-shoe-prints mr-1"></i> Shoe Store
+            <i class="fas fa-tshirt mr-1"></i> Clothing Store
         </a>
         <nav class="flex items-center gap-4">
             <c:if test="${not empty sessionScope.user}">

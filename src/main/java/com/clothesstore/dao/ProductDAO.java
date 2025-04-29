@@ -1,7 +1,7 @@
-package com.computerstore.dao;
+package com.clothesstore.dao;
 
-import com.computerstore.model.Product;
-import com.computerstore.util.DBConnection;
+import com.clothesstore.model.Product;
+import com.clothesstore.util.DBConnection;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;

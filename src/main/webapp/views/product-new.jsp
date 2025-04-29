@@ -52,8 +52,9 @@
                 <label for="category" class="block text-sm font-semibold">Category</label>
                 <select id="category" name="category"
                         class="mt-1 w-full rounded-lg border-gray-300 shadow-sm focus:ring-blue-500 focus:border-blue-500 p-2">
-                    <option value="Laptops">Laptops</option>
-                    <option value="Desktops">Desktops</option>
+                    <option value="T-Shirts">T-Shirts</option>
+                    <option value="Dresses">Dresses</option>
+                    <option value="Shoes">Shoes</option>
                     <option value="Accessories">Accessories</option>
                 </select>
             </div>

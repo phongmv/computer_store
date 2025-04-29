@@ -1,11 +1,11 @@
-package com.computerstore.util;
+package com.clothesstore.util;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class DBConnection {
-    private static final String URL = "jdbc:mysql://mysql:3306/computer_store";
+    private static final String URL = "jdbc:mysql://mysql:3306/clothes_store";
     private static final String USER = "root";
     private static final String PASSWORD = "root";
 

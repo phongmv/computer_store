@@ -3,7 +3,7 @@ services:
     image: mysql:8.0
     environment:
       MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: computer_store
+      MYSQL_DATABASE: clothes_store
       MYSQL_USER: user
       MYSQL_PASSWORD: password
     ports:
@@ -15,7 +15,7 @@ services:
 
   tomcat:
     image: tomcat:9.0
-    container_name: tomcat
+    container_name: tomcat_server
     depends_on:
       - mysql
     ports:

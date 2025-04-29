@@ -1,4 +1,4 @@
-package com.computerstore.model;
+package com.clothesstore.model;
 
 public class User {
     private int user_id;

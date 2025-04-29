@@ -1,7 +1,7 @@
-package com.computerstore.controller;
+package com.clothesstore.controller;
 
-import com.computerstore.dao.ProductDAO;
-import com.computerstore.model.Product;
+import com.clothesstore.dao.ProductDAO;
+import com.clothesstore.model.Product;
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;

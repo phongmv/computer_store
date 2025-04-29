@@ -1,4 +1,4 @@
-package com.computerstore.controller;
+package com.clothesstore.controller;
 
 import javax.servlet.*;
 import javax.servlet.http.*;

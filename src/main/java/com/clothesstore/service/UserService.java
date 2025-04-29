@@ -1,7 +1,7 @@
-package com.computerstore.service;
+package com.clothesstore.service;
 
-import com.computerstore.dao.UserDAO;
-import com.computerstore.model.User;
+import com.clothesstore.dao.UserDAO;
+import com.clothesstore.model.User;
 
 public class UserService {
     private final UserDAO userDAO;

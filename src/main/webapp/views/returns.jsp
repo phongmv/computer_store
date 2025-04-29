@@ -5,7 +5,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Returns & Exchanges Policy - Shoe Store</title>
+    <title>Returns & Exchanges Policy - Clothing Store</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -24,16 +24,17 @@
         <section>
             <h2 class="text-xl font-semibold text-blue-500 mb-2">Return Conditions</h2>
             <p class="text-gray-700 leading-relaxed">
-                Items can be returned within <strong>7 days</strong> of receiving the order. Products must be
-                <strong>unused, unwashed</strong>, and returned in their original packaging.
+                Items can be returned within <strong>14 days</strong> of receiving the order. Products must be
+                <strong>unused, unwashed</strong>, with all original tags and packaging intact. For hygiene reasons,
+                items like undergarments, swimwear, and socks cannot be returned or exchanged.
             </p>
         </section>
 
         <section>
             <h2 class="text-xl font-semibold text-blue-500 mb-2">Exchange Policy</h2>
             <p class="text-gray-700 leading-relaxed">
-                You may exchange products for another size or style if available. Exchanges must also meet the return
-                conditions outlined above.
+                You may exchange products for another size, color, or style if available. Exchanges must also meet the
+                return conditions outlined above. If the item is unavailable, a refund will be issued instead.
             </p>
         </section>
 
@@ -41,8 +42,8 @@
             <h2 class="text-xl font-semibold text-blue-500 mb-2">Return Process</h2>
             <ol class="list-decimal list-inside space-y-2 text-gray-700">
                 <li>Contact our customer service team via email or phone to initiate a return.</li>
-                <li>Securely package the items and ship them to our return address.</li>
-                <li>Once received and inspected, we will process your refund or exchange.</li>
+                <li>Securely package the items, ensuring tags and hygiene seals are intact, and ship them to our return address.</li>
+                <li>Once received and inspected, we will process your refund or exchange, and notify you of the decision.</li>
             </ol>
         </section>
 
@@ -50,7 +51,7 @@
             <h2 class="text-xl font-semibold text-blue-500 mb-2">Refunds</h2>
             <p class="text-gray-700 leading-relaxed">
                 Refunds are processed to your original payment method within <strong>3–5 business days</strong> after
-                we receive your return.
+                we receive and inspect your return. Please note that original shipping fees are non-refundable.
             </p>
         </section>
     </div>

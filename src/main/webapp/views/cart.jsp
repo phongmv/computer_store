@@ -5,89 +5,139 @@
 <html lang="vi">
 <head>
   <meta charset="UTF-8">
-  <title>Giỏ Hàng Của Bạn - TechZone</title>
+  <title>Giỏ Hàng - FS-Modern</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
-    /* Optional: Define a clean sans-serif font stack if needed */
-    /* @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap'); */
-    body {
-      /* font-family: 'Inter', sans-serif; */
+    .cart-item:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    }
+    .quantity-input {
+      -moz-appearance: textfield;
+    }
+    .quantity-input::-webkit-outer-spin-button,
+    .quantity-input::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
     }
   </style>
 </head>
-<body class="min-h-screen bg-gray-100 flex flex-col justify-between font-sans text-gray-800">
+<body class="min-h-screen bg-gray-50 flex flex-col font-sans">
 
-<%--Header--%>
+<%-- Header --%>
 <jsp:include page="header.jsp"/>
 
-<main class="flex-grow px-4 sm:px-6 lg:px-8 py-8 flex flex-col items-center pt-24 pb-20">
-  <div class="w-full max-w-5xl bg-white shadow-lg rounded-lg border border-gray-200 p-6 md:p-8">
-    <h1 class="text-2xl md:text-3xl font-semibold text-gray-900 mb-6 text-center">Giỏ Hàng Của Bạn</h1>
+<main class="flex-grow px-4 sm:px-6 lg:px-8 py-8 pt-24 pb-20">
+  <div class="max-w-6xl mx-auto">
+    <div class="mb-8">
+      <h1 class="text-3xl font-bold text-gray-900">Giỏ hàng của bạn</h1>
+      <p class="text-gray-600 mt-2">Kiểm tra và chỉnh sửa sản phẩm trước khi thanh toán</p>
+    </div>
+
     <c:choose>
       <c:when test="${empty sessionScope.cart}">
-        <p class="text-gray-600 text-center text-lg py-10">Giỏ hàng của bạn hiện đang trống. Hãy bắt đầu xây dựng cấu hình mơ ước!</p>
-        <div class="text-center mt-6">
-          <a href="${pageContext.request.contextPath}/products" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-6 rounded-md transition duration-300">
-            Tiếp tục mua sắm
+        <div class="bg-white rounded-xl shadow-sm p-8 text-center">
+          <div class="mx-auto w-24 h-24 bg-gray-100 rounded-full flex items-center justify-center mb-6">
+            <i class="fas fa-shopping-cart text-3xl text-gray-400"></i>
+          </div>
+          <h3 class="text-xl font-semibold text-gray-700 mb-2">Giỏ hàng trống</h3>
+          <p class="text-gray-500 mb-6">Bạn chưa có sản phẩm nào trong giỏ hàng</p>
+          <a href="${pageContext.request.contextPath}/products"
+             class="inline-flex items-center px-6 py-3 bg-indigo-600 hover:bg-indigo-700 text-white font-medium rounded-lg transition duration-300">
+            <i class="fas fa-arrow-left mr-2"></i> Tiếp tục mua sắm
           </a>
         </div>
       </c:when>
       <c:otherwise>
-        <div class="overflow-x-auto">
-          <table class="w-full table-auto text-left text-sm text-gray-700">
-            <thead class="bg-gray-200 text-gray-600 uppercase text-xs tracking-wider">
-            <tr>
-              <th class="px-4 py-3 font-semibold">Sản phẩm</th>
-              <th class="px-4 py-3 font-semibold text-right">Đơn giá</th>
-              <th class="px-4 py-3 font-semibold text-center">Số lượng</th>
-              <th class="px-4 py-3 font-semibold text-right">Tổng cộng</th>
-              <th class="px-4 py-3 font-semibold text-center">Hành động</th>
-            </tr>
-            </thead>
-            <tbody>
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <%-- Danh sách sản phẩm --%>
+          <div class="lg:col-span-2 space-y-4">
             <c:forEach items="${sessionScope.cart}" var="item">
-              <tr class="border-b hover:bg-gray-50">
-                <td class="px-4 py-4 font-medium text-gray-900">${item.product.name}</td>
-                <td class="px-4 py-4 text-gray-800 font-medium text-right">$${item.product.price}</td>
-                <td class="px-4 py-4">
-                  <form action="${pageContext.request.contextPath}/cart/update" method="post" class="flex items-center justify-center space-x-2">
-                    <input type="hidden" name="productId" value="${item.product.id}">
-                    <input type="number" name="quantity" value="${item.quantity}" min="1"
-                           class="w-16 px-2 py-1.5 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500 focus:outline-none text-center">
-                    <button type="submit" class="px-3 py-1.5 bg-blue-600 text-white rounded-md hover:bg-blue-700 text-xs font-medium transition duration-300">Cập nhật</button>
-                  </form>
-                </td>
-                <td class="px-4 py-4 font-semibold text-gray-900 text-right">$${item.getTotalPrice()}</td>
-                <td class="px-4 py-4 text-center">
-                  <form action="${pageContext.request.contextPath}/cart/remove" method="post">
-                    <input type="hidden" name="productId" value="${item.product.id}">
-                    <button type="submit" class="px-3 py-1.5 bg-red-600 text-white rounded-md hover:bg-red-700 text-xs font-medium transition duration-300">Xóa</button>
-                  </form>
-                </td>
-              </tr>
+              <div class="cart-item bg-white rounded-lg p-4 flex flex-col sm:flex-row gap-4 transition duration-300 border border-gray-200">
+                <div class="flex-shrink-0">
+                  <img src="${not empty item.product.image ? 'data:image/jpeg;base64,'.concat(item.product.getImageBase64()) : 'https://via.placeholder.com/150?text=No+Image'}"
+                       alt="${item.product.name}"
+                       class="w-24 h-24 sm:w-32 sm:h-32 object-cover rounded-lg"
+                       onerror="this.src='https://via.placeholder.com/150?text=Image+Error'">
+                </div>
+
+                <div class="flex-grow">
+                  <div class="flex justify-between">
+                    <h3 class="font-medium text-gray-900">${item.product.name}</h3>
+                    <form action="${pageContext.request.contextPath}/cart/remove" method="post">
+                      <input type="hidden" name="productId" value="${item.product.id}">
+                      <button type="submit" class="text-gray-400 hover:text-red-500 transition">
+                        <i class="fas fa-times"></i>
+                      </button>
+                    </form>
+                  </div>
+
+                  <p class="text-gray-600 text-sm mt-1">${item.product.category}</p>
+
+                  <div class="mt-4 flex flex-wrap items-center justify-between gap-4">
+                    <form action="${pageContext.request.contextPath}/cart/update" method="post" class="flex items-center">
+                      <input type="hidden" name="productId" value="${item.product.id}">
+                      <button type="button" onclick="this.parentNode.querySelector('input[type=number]').stepDown()"
+                              class="w-8 h-8 flex items-center justify-center border border-gray-300 rounded-l-md bg-gray-100 hover:bg-gray-200">
+                        <i class="fas fa-minus text-xs"></i>
+                      </button>
+                      <input type="number" name="quantity" value="${item.quantity}" min="1"
+                             class="quantity-input w-12 h-8 border-t border-b border-gray-300 text-center focus:outline-none focus:ring-1 focus:ring-indigo-500">
+                      <button type="button" onclick="this.parentNode.querySelector('input[type=number]').stepUp()"
+                              class="w-8 h-8 flex items-center justify-center border border-gray-300 rounded-r-md bg-gray-100 hover:bg-gray-200">
+                        <i class="fas fa-plus text-xs"></i>
+                      </button>
+                      <button type="submit" class="ml-2 px-3 py-1 text-sm bg-gray-100 hover:bg-gray-200 rounded-md transition">
+                        Cập nhật
+                      </button>
+                    </form>
+
+                    <div class="text-right">
+                      <p class="text-gray-500 text-sm">Đơn giá</p>
+                      <p class="font-semibold text-gray-900">$${item.product.price}</p>
+                    </div>
+
+                    <div class="text-right">
+                      <p class="text-gray-500 text-sm">Tổng</p>
+                      <p class="font-semibold text-indigo-600">$${item.getTotalPrice()}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </c:forEach>
-            </tbody>
-            <tfoot>
-            <tr class="bg-gray-100 font-semibold text-gray-800">
-              <td colspan="3" class="px-4 py-4 text-right text-base">Tổng Giỏ Hàng:</td>
-              <td class="px-4 py-4 text-right text-lg font-bold text-blue-700">
-                <c:set var="total" value="0" />
-                <c:forEach items="${sessionScope.cart}" var="item">
-                  <c:set var="total" value="${total + item.getTotalPrice()}" />
-                </c:forEach>
-                $${total}
-              </td>
-              <td class="px-4 py-4"></td> <%-- Empty cell for alignment --%>
-            </tr>
-            </tfoot>
-          </table>
-        </div>
-        <div class="mt-8 flex justify-end">
-          <a href="${pageContext.request.contextPath}/checkout" class="bg-green-600 hover:bg-green-700 text-white font-semibold py-2.5 px-8 rounded-md transition duration-300 text-base">
-            Tiến hành Thanh toán
-          </a>
+          </div>
+
+            <%-- Tổng thanh toán --%>
+          <div class="lg:col-span-1">
+            <div class="bg-white rounded-lg shadow-sm p-6 border border-gray-200 sticky top-4">
+              <h3 class="text-lg font-semibold text-gray-900 mb-4">Tóm tắt đơn hàng</h3>
+
+              <div class="space-y-3 mb-6">
+                <div class="flex justify-between">
+                  <span class="text-gray-600">Tạm tính</span>
+                  <c:set var="subtotal" value="0" />
+                  <c:forEach items="${sessionScope.cart}" var="item">
+                    <c:set var="subtotal" value="${subtotal + item.getTotalPrice()}" />
+                  </c:forEach>
+                  <span class="font-medium">$${subtotal}</span>
+                </div>
+
+                <div class="flex justify-between">
+                  <span class="text-gray-600">Phí vận chuyển</span>
+                  <span class="font-medium">Miễn phí</span>
+                </div>
+
+                <div class="border-t border-gray-200 my-2"></div>
+
+                <div class="flex justify-between">
+                  <span class="text-gray-900 font-semibold">Tổng cộng</span>
+                  <span class="text-indigo-600 font-bold text-xl">$${subtotal}</span>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </c:otherwise>
     </c:choose>
@@ -96,5 +146,14 @@
 
 <!-- Footer -->
 <jsp:include page="./footer.jsp" />
+
+<script>
+  // Quantity input controls
+  document.querySelectorAll('.quantity-input').forEach(input => {
+    input.addEventListener('change', function() {
+      if (this.value < 1) this.value = 1;
+    });
+  });
+</script>
 </body>
 </html>
