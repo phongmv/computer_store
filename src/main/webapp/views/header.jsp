@@ -1,67 +1,49 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
-<header class="bg-white border-b border-gray-200 fixed top-0 w-full z-50 shadow-sm">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex justify-between h-16 items-center">
-            <!-- Logo -->
-            <div class="flex-shrink-0 flex items-center">
-                <a href="${pageContext.request.contextPath}/home" class="text-2xl font-bold text-indigo-600 hover:text-indigo-800 transition-colors">
-                    <span class="hidden sm:inline">FS-Modern</span>
-                    <span class="sm:hidden">FS</span>
-                </a>
-            </div>
-
-            <!-- Main Navigation -->
-            <nav class="flex space-x-2 sm:space-x-4 items-center">
-                <!-- User info if logged in -->
-                <c:if test="${not empty sessionScope.user}">
-                    <div class="hidden md:flex items-center space-x-2 px-3 py-2 rounded-lg bg-gray-50">
-                        <div class="w-8 h-8 rounded-full bg-indigo-100 flex items-center justify-center text-indigo-600">
-                            <i class="fas fa-user text-sm"></i>
-                        </div>
-                        <span class="text-sm font-medium text-gray-700">${sessionScope.user.fullName}</span>
-                    </div>
-
-                    <a href="${pageContext.request.contextPath}/auth/logout"
-                       class="flex items-center px-3 py-2 text-sm font-medium text-gray-600 hover:text-indigo-600 hover:bg-gray-50 rounded-lg transition-colors">
-                        <i class="fas fa-sign-out-alt mr-1"></i>
-                        <span class="hidden sm:inline">Logout</span>
-                    </a>
-                </c:if>
-
-                <!-- Auth buttons if not logged in -->
-                <c:if test="${empty sessionScope.user}">
-                    <a href="${pageContext.request.contextPath}/auth/login"
-                       class="flex items-center px-3 py-2 text-sm font-medium text-gray-600 hover:text-indigo-600 hover:bg-gray-50 rounded-lg transition-colors">
-                        <i class="fas fa-sign-in-alt mr-1"></i>
-                        <span class="hidden sm:inline">Login</span>
-                    </a>
-                    <a href="${pageContext.request.contextPath}/auth/register"
-                       class="flex items-center px-3 py-2 text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 rounded-lg transition-colors">
-                        <i class="fas fa-user-plus mr-1"></i>
-                        <span class="hidden sm:inline">Register</span>
-                    </a>
-                </c:if>
-
-                <!-- Cart button -->
-                <a href="${pageContext.request.contextPath}/cart"
-                   class="relative flex items-center px-3 py-2 text-sm font-medium text-gray-600 hover:text-indigo-600 hover:bg-gray-50 rounded-lg transition-colors">
-                    <i class="fas fa-shopping-cart"></i>
-                    <c:if test="${not empty sessionScope.cart}">
-                        <span class="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
-                                ${fn:length(sessionScope.cart)}
-                        </span>
-                    </c:if>
-                    <span class="hidden sm:inline ml-1">Cart</span>
-                </a>
-
-                <!-- Add Product button -->
-                <a href="${pageContext.request.contextPath}/product-new"
-                   class="flex items-center px-3 py-2 text-sm font-medium text-white bg-gray-600 hover:bg-gray-700 rounded-lg transition-colors">
-                    <i class="fas fa-plus-circle mr-1"></i>
-                    <span class="hidden sm:inline">Add Product</span>
-                </a>
-            </nav>
+<header class="bg-yellow-100 shadow-md fixed top-0 w-screen z-[999]">
+    <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+        <div class="text-5xl font-bold text-yellow-800">
+            <a href="${pageContext.request.contextPath}/home"
+                      class="flex items-center text-2xl font-bold text-yellow-600 hover:text-yellow-800 transition-colors group">
+                       <i class="fas fa-laptop-code mr-2 group-hover:rotate-12 transition-transform"></i>
+                       <span class="bg-gradient-to-r from-yellow-600 to-amber-600 bg-clip-text text-transparent">
+                           TechZone
+                       </span>
+                   </a>
         </div>
+        <nav class="flex items-center space-x-4">
+            <c:if test="${not empty sessionScope.user}">
+                <span class="flex items-center text-yellow-900 border-b border-yellow-300 px-4 py-2">
+                    <i class="fas fa-user mr-1"></i> ${sessionScope.user.fullName}
+                </span>
+                <a href="${pageContext.request.contextPath}/auth/logout"
+                   class="bg-yellow-600 hover:bg-yellow-700 text-white px-4 py-2 rounded-md transition">
+                    <i class="fas fa-sign-out-alt mr-1"></i> Logout
+                </a>
+            </c:if>
+            <c:if test="${empty sessionScope.user}">
+                <a href="${pageContext.request.contextPath}/auth/login"
+                   class="bg-yellow-600 hover:bg-yellow-700 text-white px-4 py-2 rounded-md transition">
+                    <i class="fas fa-sign-in-alt mr-1"></i> Login
+                </a>
+                <a href="${pageContext.request.contextPath}/auth/register"
+                   class="bg-yellow-600 hover:bg-yellow-700 text-white px-4 py-2 rounded-md transition">
+                    <i class="fas fa-user-plus mr-1"></i> Register
+                </a>
+            </c:if>
+            <a href="${pageContext.request.contextPath}/cart"
+               class="relative bg-yellow-600 hover:bg-yellow-700 text-white px-4 py-2 rounded-md transition">
+                <i class="fas fa-shopping-cart mr-1"></i> Cart
+                <c:if test="${not empty sessionScope.cart}">
+                    <span class="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
+                            ${fn:length(sessionScope.cart)}
+                    </span>
+                </c:if>
+            </a>
+            <a href="${pageContext.request.contextPath}/product-new"
+               class="bg-yellow-800 hover:bg-yellow-900 text-white px-4 py-2 rounded-md transition">
+                <i class="fas fa-plus-circle mr-1"></i> Add Product
+            </a>
+        </nav>
     </div>
 </header>

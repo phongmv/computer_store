@@ -4,81 +4,119 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Add New Product</title>
+    <title>Add New Product - TechZone</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .file-upload:hover .file-upload-label {
+            background-color: #fcd34d;
+        }
+        .preview-image {
+            transition: transform 0.3s ease;
+        }
+        .preview-image:hover {
+            transform: scale(1.03);
+        }
+    </style>
 </head>
-<body class="bg-gray-50 text-gray-800">
+<body class="bg-yellow-50 text-gray-800">
 
 <jsp:include page="header.jsp"/>
 
 <!-- Form Section -->
 <div class="container mx-auto px-4 py-10 mt-16">
-    <div class="max-w-2xl mx-auto bg-white shadow-lg rounded-xl p-8">
-        <h1 class="text-3xl font-bold mb-6 text-center text-gray-800">Add New Product</h1>
+    <div class="max-w-3xl mx-auto bg-white shadow-2xl rounded-2xl p-8 border-2 border-yellow-100">
+        <div class="text-center mb-8">
+            <h1 class="text-3xl font-bold text-yellow-900">
+                <i class="fas fa-plus-circle mr-2 text-yellow-600"></i>Add New Product
+            </h1>
+            <p class="text-yellow-700 mt-2">Fill in the details to add a new product to the store</p>
+        </div>
 
-        <form action="${pageContext.request.contextPath}/product-new" method="post" enctype="multipart/form-data" class="space-y-6">
-            <!-- Name -->
-            <div>
-                <label for="name" class="block text-sm font-semibold">Product Name</label>
+        <form action="${pageContext.request.contextPath}/product-new" method="post" enctype="multipart/form-data" class="space-y-8">
+            <!-- Product Name -->
+            <div class="space-y-2">
+                <label class="block text-sm font-semibold text-yellow-800">
+                    <i class="fas fa-tag mr-2 text-yellow-600"></i>Product Name
+                </label>
                 <input type="text" id="name" name="name" required
-                       class="mt-1 w-full rounded-lg border-gray-300 shadow-sm focus:ring-blue-500 focus:border-blue-500 p-2">
+                       class="w-full rounded-xl border-2 border-yellow-200 focus:border-yellow-500 focus:ring-2 focus:ring-yellow-300 p-3 placeholder-yellow-400">
             </div>
 
-            <!-- Price -->
-            <div>
-                <label for="price" class="block text-sm font-semibold">Price ($)</label>
-                <input type="number" id="price" name="price" step="0.01" min="0" required
-                       class="mt-1 w-full rounded-lg border-gray-300 shadow-sm focus:ring-blue-500 focus:border-blue-500 p-2">
-            </div>
+            <!-- Price & Stock -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="space-y-2">
+                    <label class="block text-sm font-semibold text-yellow-800">
+                        <i class="fas fa-dollar-sign mr-2 text-yellow-600"></i>Price
+                    </label>
+                    <div class="relative">
+                        <span class="absolute left-3 top-1/2 -translate-y-1/2 text-yellow-500">$</span>
+                        <input type="number" id="price" name="price" step="0.01" min="0" required
+                               class="w-full pl-8 rounded-xl border-2 border-yellow-200 focus:border-yellow-500 focus:ring-2 focus:ring-yellow-300 p-3">
+                    </div>
+                </div>
 
-            <!-- Stock -->
-            <div>
-                <label for="stock" class="block text-sm font-semibold">Stock</label>
-                <input type="number" id="stock" name="stock" step="1" min="0" required
-                       class="mt-1 w-full rounded-lg border-gray-300 shadow-sm focus:ring-blue-500 focus:border-blue-500 p-2">
+                <div class="space-y-2">
+                    <label class="block text-sm font-semibold text-yellow-800">
+                        <i class="fas fa-boxes mr-2 text-yellow-600"></i>Stock
+                    </label>
+                    <input type="number" id="stock" name="stock" step="1" min="0" required
+                           class="w-full rounded-xl border-2 border-yellow-200 focus:border-yellow-500 focus:ring-2 focus:ring-yellow-300 p-3">
+                </div>
             </div>
 
             <!-- Description -->
-            <div>
-                <label for="description" class="block text-sm font-semibold">Description</label>
-                <textarea id="description" name="description" rows="3"
-                          class="mt-1 w-full rounded-lg border-gray-300 shadow-sm focus:ring-blue-500 focus:border-blue-500 p-2"></textarea>
+            <div class="space-y-2">
+                <label class="block text-sm font-semibold text-yellow-800">
+                    <i class="fas fa-align-left mr-2 text-yellow-600"></i>Description
+                </label>
+                <textarea id="description" name="description" rows="4"
+                          class="w-full rounded-xl border-2 border-yellow-200 focus:border-yellow-500 focus:ring-2 focus:ring-yellow-300 p-3"></textarea>
             </div>
 
             <!-- Category -->
-            <div>
-                <label for="category" class="block text-sm font-semibold">Category</label>
+            <div class="space-y-2">
+                <label class="block text-sm font-semibold text-yellow-800">
+                    <i class="fas fa-list-alt mr-2 text-yellow-600"></i>Category
+                </label>
                 <select id="category" name="category"
-                        class="mt-1 w-full rounded-lg border-gray-300 shadow-sm focus:ring-blue-500 focus:border-blue-500 p-2">
-                    <option value="T-Shirts">T-Shirts</option>
-                    <option value="Dresses">Dresses</option>
-                    <option value="Shoes">Shoes</option>
+                        class="w-full rounded-xl border-2 border-yellow-200 focus:border-yellow-500 focus:ring-2 focus:ring-yellow-300 p-3 appearance-none bg-select-arrow">
+                    <option value="Laptops">Laptops</option>
+                    <option value="Desktops">Desktops</option>
                     <option value="Accessories">Accessories</option>
                 </select>
             </div>
 
             <!-- Image Upload -->
-            <div>
-                <label for="image" class="block text-sm font-semibold">Product Image</label>
-                <input type="file" id="image" name="image" accept="image/*"
-                       class="mt-1 w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100"
-                       onchange="previewImage(event)">
-                <div class="mt-4">
-                    <img id="imagePreview" src="#" alt="Image Preview"
-                         class="hidden max-h-64 rounded-lg border border-gray-300 mx-auto"/>
+            <div class="space-y-2">
+                <label class="block text-sm font-semibold text-yellow-800">
+                    <i class="fas fa-camera mr-2 text-yellow-600"></i>Product Image
+                </label>
+                <div class="file-upload">
+                    <label for="image" class="file-upload-label cursor-pointer">
+                        <div class="w-full border-2 border-dashed border-yellow-300 rounded-xl p-6 text-center hover:border-yellow-400 transition">
+                            <i class="fas fa-cloud-upload-alt text-3xl text-yellow-500 mb-2"></i>
+                            <p class="text-yellow-700 font-medium">Click to upload product image</p>
+                            <p class="text-sm text-yellow-600">PNG, JPG, JPEG (Max 5MB)</p>
+                        </div>
+                    </label>
+                    <input type="file" id="image" name="image" accept="image/*" class="hidden" onchange="previewImage(event)">
+                </div>
+                <div class="mt-4 text-center">
+                    <img id="imagePreview" src="#" alt="Preview"
+                         class="preview-image hidden max-h-64 rounded-xl border-2 border-yellow-200 mx-auto shadow-md">
                 </div>
             </div>
 
-            <!-- Buttons -->
-            <div class="flex justify-end space-x-4 pt-6">
+            <!-- Action Buttons -->
+            <div class="flex flex-col md:flex-row justify-end gap-4 pt-8">
                 <a href="${pageContext.request.contextPath}/home"
-                   class="px-4 py-2 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-100 transition">
-                    Cancel
+                   class="flex items-center justify-center px-6 py-3 border-2 border-yellow-500 text-yellow-700 rounded-xl hover:bg-yellow-50 transition-all">
+                    <i class="fas fa-times mr-2"></i>Cancel
                 </a>
                 <button type="submit"
-                        class="px-5 py-2 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition">
+                        class="flex items-center justify-center px-8 py-3 bg-gradient-to-r from-yellow-500 to-amber-600 text-white rounded-xl font-semibold hover:from-yellow-600 hover:to-amber-700 transition-all transform hover:-translate-y-0.5 shadow-lg hover:shadow-xl">
                     <i class="fas fa-save mr-2"></i>Save Product
                 </button>
             </div>
@@ -86,7 +124,6 @@
     </div>
 </div>
 
-<!-- Preview JS -->
 <script>
   function previewImage(event) {
     const input = event.target;
@@ -103,7 +140,7 @@
         };
         reader.readAsDataURL(file);
       } else {
-        alert("Please select a valid image file.");
+        alert("Please select a valid image file (PNG, JPG, JPEG).");
         preview.classList.add('hidden');
       }
     }
