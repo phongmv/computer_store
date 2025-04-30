@@ -1,7 +1,7 @@
-package com.clothesstore.dao;
+package com.computerstore.dao;
 
-import com.clothesstore.model.User;
-import com.clothesstore.util.DBConnection;
+import com.computerstore.model.User;
+import com.computerstore.util.DBConnection;
 import java.sql.*;
 
 public class UserDAO {

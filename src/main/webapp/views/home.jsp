@@ -6,7 +6,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Modern Fashion | Home</title>
+    <title>TechZone | Home</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
@@ -316,81 +316,106 @@
     </div>
 </section>
 
-<!-- Categories Section -->
-<section class="py-16 bg-gray-100">
-    <div class="container mx-auto px-4">
+<!-- Tech Categories Section -->
+<section class="py-16 bg-gradient-to-b from-blue-50 to-white">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-12">
-            <h2 class="text-3xl font-bold mb-4">Shop by Category</h2>
-            <p class="text-gray-600 max-w-2xl mx-auto">Explore our carefully curated collections for every style and occasion</p>
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Explore Tech Categories</h2>
+            <p class="text-lg text-gray-600 max-w-3xl mx-auto">Discover cutting-edge technology products for every need</p>
         </div>
 
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div class="category-card bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition duration-300 group">
-                <a href="${pageContext.request.contextPath}/home?category=T-Shirts&page=1" class="block">
-                    <div class="relative pt-[100%] overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=600&q=80"
-                             alt="T-Shirts"
-                             class="category-image absolute inset-0 w-full h-full object-cover transition duration-500"
-                             onerror="this.src='https://via.placeholder.com/600x600?text=T-Shirts'">
-                    </div>
-                    <div class="p-6 text-center">
-                        <h3 class="text-xl font-bold mb-3 group-hover:text-indigo-600 transition">T-Shirts</h3>
-                        <span class="inline-block px-4 py-2 text-sm font-medium text-indigo-600 group-hover:text-white group-hover:bg-indigo-600 rounded-full transition">
-                            Shop Now <i class="fas fa-arrow-right ml-1"></i>
-                        </span>
-                    </div>
-                </a>
+            <!-- Laptops Category -->
+            <div class="group relative bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300">
+                <div class="relative aspect-w-16 aspect-h-9 overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?auto=format&fit=crop&w=600&q=80"
+                         alt="Premium Laptops"
+                         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                         onerror="this.src='https://via.placeholder.com/600x400?text=Premium+Laptops'">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                </div>
+                <div class="p-6 text-center">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition">Laptops</h3>
+                    <a href="${pageContext.request.contextPath}/home?category=Laptops&page=1"
+                       class="inline-flex items-center justify-center px-5 py-2.5 border border-transparent text-sm font-medium rounded-full shadow-sm text-white bg-blue-600 hover:bg-blue-700 transition-colors duration-300">
+                        Browse Collection
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                        </svg>
+                    </a>
+                </div>
+                <div class="absolute top-4 right-4 bg-blue-600 text-white text-xs font-semibold px-3 py-1 rounded-full">
+                    <i class="fas fa-bolt mr-1"></i> Trending
+                </div>
             </div>
 
-            <div class="category-card bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition duration-300 group">
-                <a href="${pageContext.request.contextPath}/home?category=Dresses&page=1" class="block">
-                    <div class="relative pt-[100%] overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1585487000160-6ebcfceb0d03?auto=format&fit=crop&w=600&q=80"
-                             alt="Dresses"
-                             class="category-image absolute inset-0 w-full h-full object-cover transition duration-500"
-                             onerror="this.src='https://via.placeholder.com/600x600?text=Dresses'">
-                    </div>
-                    <div class="p-6 text-center">
-                        <h3 class="text-xl font-bold mb-3 group-hover:text-indigo-600 transition">Dresses</h3>
-                        <span class="inline-block px-4 py-2 text-sm font-medium text-indigo-600 group-hover:text-white group-hover:bg-indigo-600 rounded-full transition">
-                            Shop Now <i class="fas fa-arrow-right ml-1"></i>
-                        </span>
-                    </div>
-                </a>
+            <!-- Desktops Category -->
+            <div class="group relative bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300">
+                <div class="relative aspect-w-16 aspect-h-9 overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1593508512255-86ab42a8e620?auto=format&fit=crop&w=600&q=80"
+                         alt="Gaming Desktops"
+                         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                         onerror="this.src='https://via.placeholder.com/600x400?text=Gaming+Desktops'">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                </div>
+                <div class="p-6 text-center">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition">Desktops</h3>
+                    <a href="${pageContext.request.contextPath}/home?category=Desktops&page=1"
+                       class="inline-flex items-center justify-center px-5 py-2.5 border border-transparent text-sm font-medium rounded-full shadow-sm text-white bg-blue-600 hover:bg-blue-700 transition-colors duration-300">
+                        Browse Collection
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                        </svg>
+                    </a>
+                </div>
             </div>
 
-            <div class="category-card bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition duration-300 group">
-                <a href="${pageContext.request.contextPath}/home?category=Shoes&page=1" class="block">
-                    <div class="relative pt-[100%] overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1460353581641-37baddab0fa2?auto=format&fit=crop&w=600&q=80"
-                             alt="Shoes"
-                             class="category-image absolute inset-0 w-full h-full object-cover transition duration-500"
-                             onerror="this.src='https://via.placeholder.com/600x600?text=Shoes'">
-                    </div>
-                    <div class="p-6 text-center">
-                        <h3 class="text-xl font-bold mb-3 group-hover:text-indigo-600 transition">Shoes</h3>
-                        <span class="inline-block px-4 py-2 text-sm font-medium text-indigo-600 group-hover:text-white group-hover:bg-indigo-600 rounded-full transition">
-                            Shop Now <i class="fas fa-arrow-right ml-1"></i>
-                        </span>
-                    </div>
-                </a>
+            <!-- Accessories Category -->
+            <div class="group relative bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300">
+                <div class="relative aspect-w-16 aspect-h-9 overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1556740738-b6a63e27c4df?auto=format&fit=crop&w=600&q=80"
+                         alt="Tech Accessories"
+                         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                         onerror="this.src='https://via.placeholder.com/600x400?text=Tech+Accessories'">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                </div>
+                <div class="p-6 text-center">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition">Accessories</h3>
+                    <a href="${pageContext.request.contextPath}/home?category=Accessories&page=1"
+                       class="inline-flex items-center justify-center px-5 py-2.5 border border-transparent text-sm font-medium rounded-full shadow-sm text-white bg-blue-600 hover:bg-blue-700 transition-colors duration-300">
+                        Browse Collection
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                        </svg>
+                    </a>
+                </div>
+                <div class="absolute top-4 left-4 bg-white text-blue-600 text-xs font-semibold px-3 py-1 rounded-full shadow-sm">
+                    <i class="fas fa-tag mr-1"></i> 20% Off
+                </div>
             </div>
 
-            <div class="category-card bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition duration-300 group">
-                <a href="${pageContext.request.contextPath}/home?category=Accessories&page=1" class="block">
-                    <div class="relative pt-[100%] overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1523170335258-f5ed11844a49?auto=format&fit=crop&w=600&q=80"
-                             alt="Accessories"
-                             class="category-image absolute inset-0 w-full h-full object-cover transition duration-500"
-                             onerror="this.src='https://via.placeholder.com/600x600?text=Accessories'">
-                    </div>
-                    <div class="p-6 text-center">
-                        <h3 class="text-xl font-bold mb-3 group-hover:text-indigo-600 transition">Accessories</h3>
-                        <span class="inline-block px-4 py-2 text-sm font-medium text-indigo-600 group-hover:text-white group-hover:bg-indigo-600 rounded-full transition">
-                            Shop Now <i class="fas fa-arrow-right ml-1"></i>
-                        </span>
-                    </div>
-                </a>
+            <!-- Components Category -->
+            <div class="group relative bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300">
+                <div class="relative aspect-w-16 aspect-h-9 overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1591488320449-011701bb6704?auto=format&fit=crop&w=600&q=80"
+                         alt="PC Components"
+                         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                         onerror="this.src='https://via.placeholder.com/600x400?text=PC+Components'">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                </div>
+                <div class="p-6 text-center">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition">Components</h3>
+                    <a href="${pageContext.request.contextPath}/home?category=Components&page=1"
+                       class="inline-flex items-center justify-center px-5 py-2.5 border border-transparent text-sm font-medium rounded-full shadow-sm text-white bg-blue-600 hover:bg-blue-700 transition-colors duration-300">
+                        Browse Collection
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                        </svg>
+                    </a>
+                </div>
+                <div class="absolute top-4 right-4 bg-white text-blue-600 text-xs font-semibold px-3 py-1 rounded-full shadow-sm">
+                    <i class="fas fa-microchip mr-1"></i> New
+                </div>
             </div>
         </div>
     </div>

@@ -15,7 +15,7 @@ services:
 
   tomcat:
     image: tomcat:9.0
-    container_name: tomcat_server
+    container_name: tomcat_server_cp
     depends_on:
       - mysql
     ports:

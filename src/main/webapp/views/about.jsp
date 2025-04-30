@@ -5,7 +5,7 @@
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
-    <title>Về Chúng Tôi - FS-Modern</title>
+    <title>Về Chúng Tôi - TechZone</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
@@ -24,9 +24,9 @@
     <section class="mb-16 text-center">
         <h2 class="text-5xl font-extrabold text-indigo-700 mb-6">Chúng tôi là ai?</h2>
         <p class="text-lg text-gray-700 leading-relaxed max-w-3xl mx-auto mb-8">
-            FS-Modern là điểm đến tin cậy của bạn cho công nghệ máy tính và điện tử tiên tiến. Được thành lập bởi đội ngũ kỹ sư và những người đam mê công nghệ, sứ mệnh của chúng tôi là trao quyền cho người dùng bằng các thiết bị chất lượng hàng đầu và dịch vụ vượt trội.
+            TechZone là điểm đến tin cậy của bạn cho công nghệ máy tính và điện tử tiên tiến. Được thành lập bởi đội ngũ kỹ sư và những người đam mê công nghệ, sứ mệnh của chúng tôi là trao quyền cho người dùng bằng các thiết bị chất lượng hàng đầu và dịch vụ vượt trội.
         </p>
-        <img src="https://images.unsplash.com/photo-1581090700227-1e8e8d1e8e2b?auto=format&fit=crop&w=1350&q=80" alt="Đội ngũ FS-Modern" class="rounded-xl shadow-2xl w-full max-w-4xl mx-auto max-h-[450px] object-cover mb-8 border-4 border-indigo-300">
+        <img src="https://images.unsplash.com/photo-1581090700227-1e8e8d1e8e2b?auto=format&fit=crop&w=1350&q=80" alt="Đội ngũ TechZone" class="rounded-xl shadow-2xl w-full max-w-4xl mx-auto max-h-[450px] object-cover mb-8 border-4 border-indigo-300">
         <p class="text-md text-gray-600 max-w-3xl mx-auto">
             Từ game thủ đến chuyên gia, chúng tôi phục vụ khách hàng toàn cầu với cam kết về sự đổi mới, chất lượng và tính bền vững trong mọi hoạt động.
         </p>

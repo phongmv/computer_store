@@ -1,7 +1,7 @@
-package com.clothesstore.service;
+package com.computerstore.service;
 
-import com.clothesstore.dao.ProductDAO;
-import com.clothesstore.model.Product;
+import com.computerstore.dao.ProductDAO;
+import com.computerstore.model.Product;
 import java.util.List;
 
 public class ProductService {

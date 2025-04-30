@@ -1,4 +1,4 @@
-package com.clothesstore.util;
+package com.computerstore.util;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

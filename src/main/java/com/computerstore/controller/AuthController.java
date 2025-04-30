@@ -1,7 +1,7 @@
-package com.clothesstore.controller;
+package com.computerstore.controller;
 
-import com.clothesstore.model.User;
-import com.clothesstore.service.UserService;
+import com.computerstore.model.User;
+import com.computerstore.service.UserService;
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
